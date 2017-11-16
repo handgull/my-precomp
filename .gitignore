@@ -1,0 +1,12 @@
+/assets/
+!assets/fonts/Fontawesome
+/css/
+!css/font-awesome.min.css
+.sass-cache/
+/js/
+!js/jquery-3.2.1.min.js
+/pages/
+favicon.ico
+index.php
+404.html
+500.html
