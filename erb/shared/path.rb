@@ -1,7 +1,8 @@
 class Pathr
+# when in a page or css file there is @{type}_{variable} the souce path will be
+# written here.
   def get_domain
-    return "https://sitet.herokuapp.com/"
-    #return "http://localhost/"
+    return "https://domain/"
   end
   def get_source(type, sourcename)
     pagespath = "pages/"
@@ -9,14 +10,14 @@ class Pathr
     jspath = "js/"
     imgpath = "assets/images/"
 #
-#+--------+
+#+-------+
 #| PAGES |
-#+--------+
+#+-------+
 #
     if type == "itpage" || type == "enpage"
       path = get_domain + pagespath + type[0..1] + "/"
-      if sourcename == "home"
-        sourcepath = path + "home"
+      if sourcename == "example"
+        sourcepath = path + "example"
       end
 #
 #+-----+
@@ -27,10 +28,8 @@ class Pathr
       path = get_domain + csspath
       if sourcename == "fa"
         sourcepath = path + "font-awesome.min.css"
-      elsif sourcename == "base"
-        sourcepath = path + "base.css"
-      elsif sourcename == "home"
-        sourcepath = path + "home.css"
+      elsif sourcename == "example"
+        sourcepath = path + "example.css"
       end
 #
 #+----+
@@ -41,10 +40,8 @@ class Pathr
       path = get_domain + jspath
       if sourcename == "jquery"
         sourcepath = path + "jquery-3.2.1.min.js"
-      elsif sourcename == "slides"
-        sourcepath = path + "responsiveslides.min.js"
-      elsif sourcename == "home"
-        sourcepath = path + "home.min.js"
+      elsif sourcename == "example"
+        sourcepath = path + "example.min.js"
       end
 #
 #+--------+
@@ -55,26 +52,6 @@ class Pathr
       path = get_domain + imgpath
       if sourcename == "favicon"
         sourcepath = get_domain + "favicon.ico"
-      elsif sourcename == "logo"
-        sourcepath = path + "logo.png"
-      elsif sourcename == "it" || sourcename == "IT"
-        sourcepath = path + "flags/it.svg"
-      elsif sourcename == "en" || sourcename == "EN"
-        sourcepath = path + "flags/en.svg"
-      elsif sourcename == "s1"
-        sourcepath = path + "slideshow/s1.jpg"
-      elsif sourcename == "s2"
-        sourcepath = path + "slideshow/s2.jpg"
-      elsif sourcename == "s3"
-        sourcepath = path + "slideshow/s3.jpg"
-      elsif sourcename == "m1"
-        sourcepath = path + "mood/m1.png"
-      elsif sourcename == "m2"
-        sourcepath = path + "mood/m2.png"
-      elsif sourcename == "m3"
-        sourcepath = path + "mood/m3.png"
-      elsif sourcename == "m4"
-        sourcepath = path + "mood/m4.png"
       end
     end
     return sourcepath

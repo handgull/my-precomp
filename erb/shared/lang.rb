@@ -1,9 +1,10 @@
 # ATTENZIONE ALLA EVAL, SE SI MODIFICA LA VARIABILE text IN write
 class Langw
   def basetitle
-    return "e-commerce"
+    return "MYTITLE"
   end
   def write(filec, get_text)
+    # in error pages i don't need different titles in it or en
     filec = filec.gsub("=e404_title", basetitle + " | 404")
     filec = filec.gsub("=e500_title", basetitle + " | 500")
     regex = Regexp.new(/=(?<text>[a-zA-Z0-9]+_?[a-zA-Z]+)/)
@@ -28,10 +29,11 @@ end
 
 class ITtext
   def get_text(text)
+# when in a page there is ={page}_{variable} will be translated here
 #
-#+------+
-#| HOME |
-#+------+
+#+--------------+
+#| EXAMPLE HOME |
+#+--------------+
 #
     if text == "home_title"
       return Langw.new.basetitle
@@ -69,10 +71,11 @@ end
 
 class ENtext
   def get_text(text)
+# when in a page there is ={page}_{variable} will be translated here
 #
-#+------+
-#| HOME |
-#+------+
+#+--------------+
+#| EXAMPLE HOME |
+#+--------------+
 #
     if text == "home_title"
       return Langw.new.basetitle
